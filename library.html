@@ -9,6 +9,7 @@
       width: 200px;
       float: left;
       padding: 1px 20px;
+      margin-top: 20px;
     }
     #library .book h3 {
       font-style: italic;
@@ -21,6 +22,14 @@
 <body>
 
 <h1>THE LIBRARY</h1>
+
+<label id="book-title">Title: </label>
+<input id="title-input" type="text" />
+
+<label id="book-author">Author: </label>
+<input id="author-input" type="text" />
+
+<input id="submit-button" type="button" value="Add Book!" />
 
 <div id="library">
 </div>
@@ -76,7 +85,7 @@
   };
 
   renderLibrary();
-  
+
 </script>
 
 <small>It's back.</small>
