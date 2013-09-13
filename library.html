@@ -23,13 +23,13 @@
 
 <h1>THE LIBRARY</h1>
 
-<label id="book-title">Title: </label>
-<input id="title-input" type="text" />
+<label>Title: </label>
+<input id="title" type="text" />
 
-<label id="book-author">Author: </label>
-<input id="author-input" type="text" />
+<label>Author: </label>
+<input id="author" type="text" />
 
-<input id="submit-button" type="button" value="Add Book!" />
+<input id="submit" type="button" value="Add Book!" />
 
 <div id="library">
 </div>
@@ -85,6 +85,14 @@
   };
 
   renderLibrary();
+
+
+  $("#submit").on("click", function (e) {
+    var title = $("#title").val();
+    var author = $("#author").val();
+    var newBookHtml = bookTemplate({title: title, author: author, status: "available"});
+    $("#library").append(newBookHtml);
+  });
 
 </script>
 
