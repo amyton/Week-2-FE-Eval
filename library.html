@@ -68,11 +68,15 @@
   }
   ];
 
-  for (var i=0; i < book.length; i += 1) { 
-    var newBookHtml = bookTemplate(book[i]);
-    $("#library").append(newBookHtml);
+  var renderLibrary = function () {
+    for (var i=0; i < book.length; i += 1) { 
+      var newBookHtml = bookTemplate(book[i]);
+      $("#library").append(newBookHtml);
+    }
   };
 
+  renderLibrary();
+  
 </script>
 
 <small>It's back.</small>
