@@ -27,6 +27,14 @@
 
 <div id="templates">
 
+    <script class="book" type="text/template">
+      <div class="book">
+        <h3><%= title %></h3>
+        <h5><%= author %></h5>
+        <p>Status: <%= status %></p>
+      </div>
+    </script>
+
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -34,23 +42,23 @@
 <script type="text/javascript">
   // TODO
 
-  var books = [
-  {
+  // .html gives us that entire thing in the div a string, so you can treat it like a string
+  // storing the string into variable: bookTemplateHtml
+  // # templates, find all children .book
+  var bookTemplateHtml = $('#templates .book').html();
+
+  // takes html and takes the function and gives it new html
+  var bookTemplate = _.template(bookTemplateHtml);
+  
+  var book = {
     title: "Cat in the Herp",
     author: "Dr. Meowmers", 
     status: "available"
-  },
-  {
-    title: "Catfish",
-    author: "Prof. Meowingtons",
-    status: "available"
-  },
-  {
-    title: "Hamlet",
-    author: "Shakespeare",
-    status: "available"
-  }
-  ];
+  };
+
+  var newBookHtml = bookTemplate(book);
+  $("#library").append(newBookHtml);
+
 
 </script>
 
