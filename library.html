@@ -36,13 +36,13 @@
 
 <div id="templates">
 
-    <script class="book" type="text/template">
-      <div class="book">
-        <h3><%= title %></h3>
-        <h5><%= author %></h5>
-        <p>Status: <%= status %></p>
-      </div>
-    </script>
+  <script class="book" type="text/template">
+    <div class="book">
+      <h3><%= title %></h3>
+      <h5><%= author %></h5>
+      <p>Status: <%= status %></p>
+    </div>
+  </script>
 
 </div>
 
@@ -60,21 +60,21 @@
   var bookTemplate = _.template(bookTemplateHtml);
   
   var book = [
-  {
-    title: "Cat in the Herp",
-    author: "Dr. Meowmers", 
-    status: "available"
-  },
-  {
-    title: "Catfish",
-    author: "Prof. Meowingtons",
-    status: "available"
-  },
-  {
-    title: "Hamlet",
-    author: "Shakespeare",
-    status: "available"
-  }
+    {
+      title: "Cat in the Herp",
+      author: "Dr. Meowmers", 
+      status: "available"
+    },
+    {
+      title: "Catfish",
+      author: "Prof. Meowingtons",
+      status: "available"
+    },
+    {
+      title: "Hamlet",
+      author: "Shakespeare",
+      status: "available"
+    }
   ];
 
   var renderLibrary = function () {
@@ -90,7 +90,11 @@
   $("#submit").on("click", function (e) {
     var title = $("#title").val();
     var author = $("#author").val();
-    var newBookHtml = bookTemplate({title: title, author: author, status: "available"});
+    var newBookHtml = bookTemplate({
+      title: title,
+      author: author,
+      status: "available"
+    });
     $("#library").append(newBookHtml);
   });
 
