@@ -50,15 +50,28 @@
   // takes html and takes the function and gives it new html
   var bookTemplate = _.template(bookTemplateHtml);
   
-  var book = {
+  var book = [
+  {
     title: "Cat in the Herp",
     author: "Dr. Meowmers", 
     status: "available"
+  },
+  {
+    title: "Catfish",
+    author: "Prof. Meowingtons",
+    status: "available"
+  },
+  {
+    title: "Hamlet",
+    author: "Shakespeare",
+    status: "available"
+  }
+  ];
+
+  for (var i=0; i < book.length; i += 1) { 
+    var newBookHtml = bookTemplate(book[i]);
+    $("#library").append(newBookHtml);
   };
-
-  var newBookHtml = bookTemplate(book);
-  $("#library").append(newBookHtml);
-
 
 </script>
 
